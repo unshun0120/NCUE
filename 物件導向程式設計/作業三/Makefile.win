@@ -1,0 +1,28 @@
+# Project: S0954029_S0954037_物件導向HW3
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = 物件導向HW3_main.o
+LINKOBJ  = 物件導向HW3_main.o
+LIBS     = -L"D:/App & Tools/Dev C++/Dev-Cpp/MinGW64/lib" -L"D:/App & Tools/Dev C++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/App & Tools/Dev C++/Dev-Cpp/MinGW64/include" -I"D:/App & Tools/Dev C++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/App & Tools/Dev C++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/App & Tools/Dev C++/Dev-Cpp/MinGW64/include" -I"D:/App & Tools/Dev C++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/App & Tools/Dev C++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/App & Tools/Dev C++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = S0954029_S0954037_物件導向HW3.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+物件導向HW3_main.o: 物件導向HW3_main.cpp
+	$(CPP) -c 物件導向HW3_main.cpp -o 物件導向HW3_main.o $(CXXFLAGS)
